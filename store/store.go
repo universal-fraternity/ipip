@@ -21,7 +21,7 @@ type Store struct {
 	ipv6EntityList []*IPV6Entity
 	v6MateList     []*Meta
 	v4MateList     []*Meta
-	opt            Option // 配置参数
+	opt            Option
 	v4Mu           sync.RWMutex
 	v6Mu           sync.RWMutex
 }
