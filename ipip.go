@@ -1,4 +1,4 @@
-// Package ipip IPIP数据源核心驱动
+// Package ipip IPIP Data Source Core Driver Test Code
 package ipip
 
 import (
