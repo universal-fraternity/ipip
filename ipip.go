@@ -5,30 +5,30 @@ import (
 	"net"
 	"sync"
 
-	"github.com/universal-fraternity/ipip/store"
+	"github.com/universal-fraternity/ipip/core"
 )
 
 var (
-	defaultStore *store.Store
+	defaultStore *core.Store
 	once         sync.Once
 )
 
-// Store output store.Store.
-type Store = store.Store
+// Store output core.Store.
+type Store = core.Store
 
-// Meta output store.Meta。
-type Meta = store.Meta
+// Meta output core.Meta。
+type Meta = core.Meta
 
-// Option output store.Option。
-type Option = store.Option
+// Option output core.Option。
+type Option = core.Option
 
-// FileInfo output store.FileInfo
-type FileInfo = store.FileInfo
+// FileInfo output core.FileInfo
+type FileInfo = core.FileInfo
 
-// Load load data
-func Load(opt Option) error {
+// Init init core.Store and load data
+func Init(opt Option) error {
 	once.Do(func() {
-		defaultStore = store.NewStore()
+		defaultStore = core.NewStore()
 	})
 	return defaultStore.LoadData(opt)
 }
